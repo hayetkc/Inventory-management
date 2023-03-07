@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <form action='' method="get">
+         <label for="search"> Entrer le nom du produits:</label>
+         <input type="text" name="recherche" id="search">
+         <button type="submit">demarrer le recherche</button>
+    </form>
+    <h4>resultat de recherche :</h4>
+    <ul>
+        {% for product in products %}
+            <li>Nom de produit: {{ product.Name }},son prix: {{ product.price }} Da. </li>
+        {% endfor%}
+    </ul>
+
+</body>
+</html>

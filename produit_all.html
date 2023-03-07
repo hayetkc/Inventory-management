@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Produits</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{% block content %}
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <div class="tab-content" style="position: absolute;width: 70%;left:20%;top: 10% ;bottom: 50%">
+
+
+         <h2>List des produits </h2>
+        <table class="table table-bordered table-condensed table-hover" >
+            <thead>
+            <tr>
+                <th scope="col">nom</th>
+                <th scope="col">disingation</th>
+                <th scope="col">prixU</th>
+                <th scope="col">date</th>
+                <th scope="col">code_type</th>
+                <th scope="col">fournisseur</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.nom_prdt }}</td>
+                    <td>{{ produit.design_prdt }}</td>
+                    <td>{{ produit.prixU }}</td>
+                    <td>{{ produit.date_created }}</td>
+                    <td>{{ produit.code_type }}</td>
+                    <td>{{ produit.fournisseur }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}  
+<div class="container-fluid">
+
+    <div class="card bg-white">
+        <div class="card-header card-color">
+            <p class="h2 text-center text-uppercase font-weight-bold pt-2">Gestion des Clients</p>
+        </div>
+        <div>
+            <a href="{% url ='add-client' %}">
+                <button type="button" class="btn btn-primary rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Add New</button>
+            </a>
+        </div>
+
+        <div class="row table-responsive m-auto rounded">
+            <table id="tclient" class="table table-hover w-100">
+                <thead>
+                <tr class="text-uppercase bg-light  w-100">
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">tel</th>
+                    <th scope="col">Supprimer</th>
+                    <th scope="col">Modifier</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for produit in produits %}
+                    <tr>
+                        <td class="px-2 py-1 align-middle text-center">{{ forloop.counter }}</td>
+                        <td class="px-2 py-1 align-middle">{{ produit.date_created|date:"Y-m-d h:i A" }}</td>
+                        <td class="px-2 py-1 align-middle">{{ produit.nom_prdt }}</td>
+                        <td class="px-2 py-1 align-middle">
+                            <p class="m-0 text-truncate">{{ produit.description }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
